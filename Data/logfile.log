@@ -1,0 +1,13 @@
+
+2022-02-04 17:27:10,028 :INFO : test_Price_And_Product :Se ingresa email y password
+2022-02-04 17:48:04,445 :INFO : test_Price_And_Product :Se ingresa email y password
+2022-02-07 17:35:09,873 :INFO : test_Login_Success :Se hace click en link signIn
+2022-02-07 17:35:13,439 :INFO : test_Login_Success :Se ingresa email y password
+2022-02-07 17:37:39,002 :INFO : test_Login_Success :Se hace click en link signIn
+2022-02-07 17:37:42,491 :INFO : test_Login_Success :Se ingresa email y password
+2022-02-08 11:17:31,325 :INFO : test_Price_And_Product :Se ingresa email y password
+2022-02-08 11:22:44,557 :INFO : test_Price_And_Product :Se ingresa email y password
+2022-02-08 11:25:18,449 :INFO : test_Price_And_Product :Se ingresa email y password
+2022-02-08 15:07:30,936 :INFO : test_Login_Success :Se hace click en link signIn
+2022-02-08 15:07:34,512 :INFO : test_Login_Success :Se ingresa email y password
+2022-02-08 15:07:37,787 :INFO : test_Login_Success :El usuario está logueado
