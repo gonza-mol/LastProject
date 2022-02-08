@@ -57,6 +57,6 @@ class TestPriceAndProduct(BaseClass):
         hp.select_Logout()
         time.sleep(3)
         assert hp.verifyLoggedOut().is_displayed()
-        print("Se está deslogueado")
+        print("El usuario está deslogueado")
 
 
