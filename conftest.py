@@ -15,9 +15,9 @@ def test_setup(request):
     from selenium import webdriver
     browser = request.config.getoption("--browser")
     if browser == 'chrome':
-        driver = webdriver.Chrome("C:\\Users\\admin\\PycharmProjects\\NewAutomationPractice\\Drivers\\chromedriver.exe")
+        driver = webdriver.Chrome("C:\\Users\\admin\\PycharmProjects\\NewAutomationPractice1\\Drivers\\chromedriver.exe")
     elif browser == 'firefox':
-        driver = webdriver.Firefox("C:\\Users\\admin\\PycharmProjects\\NewAutomationPractice\\Drivers\\geckodriver.exe")
+        driver = webdriver.Firefox("C:\\Users\\admin\\PycharmProjects\\NewAutomationPractice1\\Drivers\\geckodriver.exe")
     warnings.simplefilter('ignore', ResourceWarning)
     #driver = webdriver.Chrome("C:\\Users\\admin\\PycharmProjects\\SegundoProyecto\\Drivers\\chromedriver.exe")
     driver.implicitly_wait(10)
