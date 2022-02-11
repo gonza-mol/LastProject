@@ -9,6 +9,12 @@ class CategoryWomenPageLocators:
     productNameBlueTop = (By.CSS_SELECTOR, "div.col-sm-7>div>h2")
     priceOfBlueTop = (By.CSS_SELECTOR, "div.col-sm-7>div>span>span")
     labelOfStock = (By.CSS_SELECTOR, "div.col-sm-7>div>p:nth-child(6)")
+    labelWriteReview = (By.CSS_SELECTOR, "div.col-sm-12>ul>li>a")
+    txtName = (By.ID, "name")
+    txtEmail = (By.ID, "email")
+    txtReview = (By.ID, "review")
+    btnSubmit = (By.ID, "button-review")
+    bannerReviewSuccessful = (By.CSS_SELECTOR, "#review-section>div>div>span")
 
 class CategoryWomenPage:
 
@@ -30,9 +36,20 @@ class CategoryWomenPage:
     def getLabelWithStock(self):
         return self.driver.find_element(*CategoryWomenPageLocators.labelOfStock).text
 
+    def getLabelWriteReview(self):
+        return self.driver.find_element(*CategoryWomenPageLocators.labelWriteReview).text
 
+    def completeReview(self, name, email, review):
+        self.driver.find_element(*CategoryWomenPageLocators.txtName).send_keys(name)
+        self.driver.find_element(*CategoryWomenPageLocators.txtEmail).send_keys(email)
+        self.driver.find_element(*CategoryWomenPageLocators.txtReview).send_keys(review)
+        self.driver.find_element(*CategoryWomenPageLocators.btnSubmit).click()
 
+    def getBannerReviewSuccessful(self):
+        return self.driver.find_element(*CategoryWomenPageLocators.bannerReviewSuccessful)
 
+    def getTitleOfBannerReviewSuccessful(self):
+        return self.driver.find_element(*CategoryWomenPageLocators.bannerReviewSuccessful).text
 
 
 
