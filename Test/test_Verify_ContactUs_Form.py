@@ -4,21 +4,13 @@ import unittest
 import sys
 import os
 
-from selenium.webdriver.common import alert
-from selenium.webdriver.common.alert import Alert
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.wait import WebDriverWait
-from selenium.webdriver.support import expected_conditions
 
 from POM.ContactUsPage import ContactUsPage
 
 sys.path.append(os.path.join(os.path.dirname(__file__),"..",".."))
-import json
-from colorama import Fore, Back, Style
-import HtmlTestRunner
-from Utils import utils as utils
+
 from POM.HomePage import HomePage
-from POM.LoginPage import LoginPage
+
 from Utils.BaseClass import BaseClass
 
 @pytest.mark.usefixtures("test_setup")

@@ -19,7 +19,8 @@ class HomePageLocators:
     categoryWomenLink = (By.CSS_SELECTOR, "div:nth-child(1)>div.panel-heading>h4>a>span>i")
     categoryWomenTopsLink = (By.CSS_SELECTOR, "#Women>div>ul>li:nth-child(2)>a")
     sliderWithPriceAndProduct = (By.CSS_SELECTOR, "div:nth-child(3)>div>div.single-products>div.product-overlay>div")
-
+    cartLink = (By.CSS_SELECTOR, "li:nth-child(3)>a")
+    homeLink = (By.CSS_SELECTOR, "ul>li:nth-child(1)>a")
 
 class HomePage:
 
@@ -75,4 +76,9 @@ class HomePage:
     def verifyLoggedOut(self):
         return self.driver.find_element(*HomePageLocators.signInlink)
 
+    def select_Cart(self):
+        self.driver.find_element(*HomePageLocators.cartLink).click()
+
+    def select_Home(self):
+        self.driver.find_element(*HomePageLocators.homeLink).click()
 
