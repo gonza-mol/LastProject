@@ -1,3 +1,5 @@
+import time
+
 from selenium.webdriver import ActionChains
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.select import Select
@@ -21,6 +23,9 @@ class HomePageLocators:
     sliderWithPriceAndProduct = (By.CSS_SELECTOR, "div:nth-child(3)>div>div.single-products>div.product-overlay>div")
     cartLink = (By.CSS_SELECTOR, "li:nth-child(3)>a")
     homeLink = (By.CSS_SELECTOR, "ul>li:nth-child(1)>a")
+    searchBox = (By.XPATH, "//input[@id='search_product']")
+    glassSearch = (By.XPATH, "//button[@id='submit_search']")
+    loggedInUser = (By.CSS_SELECTOR, "li:nth-child(9)>a")
 
 class HomePage:
 
@@ -81,4 +86,18 @@ class HomePage:
 
     def select_Home(self):
         self.driver.find_element(*HomePageLocators.homeLink).click()
+
+    def selectSearchBox(self, product):
+        self.driver.find_element(*HomePageLocators.searchBox).send_keys(product)
+        time.sleep(2)
+        self.driver.find_element(*HomePageLocators.glassSearch).click()
+        time.sleep(2)
+
+
+    def selectLoggedInUser(self):
+        hover = ActionChains(self.driver).move_to_element(self.driver.find_element(*HomePageLocators.loggedInUser))
+        hover.perform()
+
+    def getLoggedInUserIcon(self):
+        return self.driver.find_element(*HomePageLocators.loggedInUser)
 

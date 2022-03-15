@@ -17,6 +17,11 @@ class ProductsPageLocators:
     btnAddCart3 = (By.CSS_SELECTOR, "div:nth-child(5)>div>div.single-products>div.product-overlay>div>a")
     btnContinueShoppingPopUp = (By.CSS_SELECTOR, "#cartModal>div>div>div.modal-footer>button")
     listOfDresses = (By.CSS_SELECTOR, "#cart_info_table>tbody>tr")
+    unicornPrintProduct = (By.CSS_SELECTOR, "div.productinfo.text-center")
+    titleUnicorn = (By.CSS_SELECTOR, "div.single-products>div.product-overlay>div>p")
+    blueTopProduct = (By.CSS_SELECTOR, "div.col-sm-9.padding-right>div>div:nth-child(3)>div")
+    btnAddBlueTopProduct = (By.XPATH, "//div[2]/div/div[1]/div[2]/div/a")
+    goCartFromPopUp = (By.CSS_SELECTOR, "p:nth-child(2)>a")
 
 
 
@@ -66,7 +71,6 @@ class ProductsPage:
         time.sleep(2)
 
 
-
     def selectWomenCategoryIcon(self):
         self.driver.find_element(*ProductsPageLocators.womenCategoryLink).click()
 
@@ -76,6 +80,15 @@ class ProductsPage:
     def getQuantityLoadedDresses(self):
         return len(self.driver.find_elements(*ProductsPageLocators.listOfDresses))
 
+    def verifyUnicornprintProduct(self):
+        hover = ActionChains(self.driver).move_to_element(self.driver.find_element(*ProductsPageLocators.unicornPrintProduct))
+        hover.perform()
+        return self.driver.find_element(*ProductsPageLocators.titleUnicorn).text
 
+    def selectBlueTopProduct(self):
+        hover = ActionChains(self.driver).move_to_element(self.driver.find_element(*ProductsPageLocators.blueTopProduct))
+        hover.perform()
+        self.driver.find_element(*ProductsPageLocators.btnAddBlueTopProduct).click()
 
-
+    def goShoppingCart(self):
+        self.driver.find_element(*ProductsPageLocators.goCartFromPopUp).click()
