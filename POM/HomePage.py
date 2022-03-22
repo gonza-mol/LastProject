@@ -26,6 +26,13 @@ class HomePageLocators:
     searchBox = (By.XPATH, "//input[@id='search_product']")
     glassSearch = (By.XPATH, "//button[@id='submit_search']")
     loggedInUser = (By.CSS_SELECTOR, "li:nth-child(9)>a")
+    recommendedItems = (By.CSS_SELECTOR, "div.recommended_items>h2")
+    numberRecommendedItems = (By.CSS_SELECTOR, "div.recommended_items div.productinfo.text-center>img:nth-child(1)")
+    namesRecommendedItems1 = (By.XPATH, "//div[@id='recommended-item-carousel']/div/div[2]/div[3]/div/div/div/p")
+    namesRecommendedItems2 = (By.XPATH, "")
+    rightArrowItem = (By.CSS_SELECTOR, " a.right.recommended-item-control>i")
+    testCaseLink = (By.CSS_SELECTOR, "#header li:nth-child(5)>a")
+    apiTestingLink = (By.CSS_SELECTOR, "#header li:nth-child(6)>a")
 
 class HomePage:
 
@@ -101,3 +108,22 @@ class HomePage:
     def getLoggedInUserIcon(self):
         return self.driver.find_element(*HomePageLocators.loggedInUser)
 
+    def getRecommededItemTitle(self):
+        return self.driver.find_element(*HomePageLocators.recommendedItems).text
+
+    def getAllRecommendedItems(self):
+        return self.driver.find_elements(*HomePageLocators.numberRecommendedItems)
+
+    def getNameRecommendedItems1(self, num):
+        return self.driver.find_element(By.CSS_SELECTOR, "#recommended-item-carousel>div>div.item.active>div:nth-child("+str(num)+")>div>div>div>p")
+
+    def selectNextItem(self):
+        self.driver.find_element(*HomePageLocators.rightArrowItem).click()
+
+
+    def selectTestCaseLink(self):
+        self.driver.find_element(*HomePageLocators.testCaseLink).click()
+
+
+    def selectApisTestLink(self):
+        self.driver.find_element(*HomePageLocators.apiTestingLink).click()
