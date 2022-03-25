@@ -45,7 +45,6 @@ class TestListOfTestCases(BaseClass):
                print(i.text)
                n = n+1
             else:
-                exit
                 print("Eso fue todo, muchas gracias")
 
 

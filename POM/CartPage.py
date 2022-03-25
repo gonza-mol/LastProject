@@ -11,6 +11,8 @@ class CartPageLocators:
     recordsOfProducts = (By.CSS_SELECTOR, "#cart_info_table>tbody>tr")
     tableOfProducts = (By.CSS_SELECTOR, "#cart_info_table>tbody")
     deleteProducts = (By.CSS_SELECTOR, " td.cart_delete>a")
+    hereHiperlink = (By.CSS_SELECTOR, "#empty_cart>p>a>u")
+
 
 
 
@@ -36,3 +38,7 @@ class CartPage:
         for ele in range(1, elements+1):
             self.driver.find_element(*CartPageLocators.deleteProducts).click()
             time.sleep(3)
+
+
+    def selectHereHyperlink(self):
+        self.driver.find_element(*CartPageLocators.hereHiperlink).click()

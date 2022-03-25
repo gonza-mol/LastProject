@@ -12,7 +12,8 @@ class LoginPageLocators:
     labelLogin = (By.CSS_SELECTOR, "div.col-sm-4.col-sm-offset-1>div>h2")
     boxNameSignUp = (By.CSS_SELECTOR, "input[type=text]:nth-child(2)")
     boxEmailSignUp = (By.CSS_SELECTOR, "input[type=email]:nth-child(3)")
-    btnSignUp =(By.CSS_SELECTOR, "div:nth-child(3) > div > form > button")
+    btnSignUp = (By.CSS_SELECTOR, "div:nth-child(3) > div > form > button")
+    mgeUserAlreadyExit = (By.CSS_SELECTOR, "div:nth-child(3)>div>form>p")
 
 
 class LoginPage:
@@ -38,6 +39,9 @@ class LoginPage:
         self.driver.find_element(*LoginPageLocators.boxEmailSignUp).send_keys(email)
         self.driver.find_element(*LoginPageLocators.btnSignUp).click()
         time.sleep(4)
+
+    def error_NewUser_AlreadyExist(self):
+        return self.driver.find_element(*LoginPageLocators.mgeUserAlreadyExit)
 
 
 
