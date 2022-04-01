@@ -2,6 +2,7 @@ import time
 
 from selenium.webdriver import ActionChains
 from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.select import Select
 
 
@@ -127,3 +128,11 @@ class HomePage:
 
     def selectApisTestLink(self):
         self.driver.find_element(*HomePageLocators.apiTestingLink).click()
+
+    def selectNewTabs(self):
+        self.driver.find_element(*HomePageLocators.productsLink).send_keys(Keys.CONTROL + Keys.RETURN)
+        time.sleep(2)
+        self.driver.find_element(*HomePageLocators.cartLink).send_keys(Keys.CONTROL + Keys.RETURN)
+        time.sleep(2)
+        self.driver.find_element(*HomePageLocators.contactUsLink).send_keys(Keys.CONTROL + Keys.RETURN)
+
