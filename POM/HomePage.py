@@ -34,6 +34,9 @@ class HomePageLocators:
     rightArrowItem = (By.CSS_SELECTOR, " a.right.recommended-item-control>i")
     testCaseLink = (By.CSS_SELECTOR, "#header li:nth-child(5)>a")
     apiTestingLink = (By.CSS_SELECTOR, "#header li:nth-child(6)>a")
+    testCaseLinkLogin = (By.CSS_SELECTOR, "#header li:nth-child(6)>a")
+    apiTestingLinkLogin = (By.CSS_SELECTOR, "#header li:nth-child(7)>a")
+
 
 class HomePage:
 
@@ -136,3 +139,10 @@ class HomePage:
         time.sleep(2)
         self.driver.find_element(*HomePageLocators.contactUsLink).send_keys(Keys.CONTROL + Keys.RETURN)
 
+
+    def selectTestCaseLinkNewWindow(self):
+        self.driver.find_element(*HomePageLocators.testCaseLinkLogin).send_keys(Keys.CONTROL + Keys.RETURN)
+
+
+    def selectApisTestLinkNewWindow(self):
+        self.driver.find_element(*HomePageLocators.apiTestingLinkLogin).send_keys(Keys.CONTROL + Keys.RETURN)
