@@ -22,7 +22,7 @@ class ProductsPageLocators:
     blueTopProduct = (By.CSS_SELECTOR, "div.col-sm-9.padding-right>div>div:nth-child(3)>div")
     btnAddBlueTopProduct = (By.XPATH, "//div[2]/div/div[1]/div[2]/div/a")
     goCartFromPopUp = (By.CSS_SELECTOR, "p:nth-child(2)>a")
-
+    listAllProducts = (By.CSS_SELECTOR, "body div>div>div.choose>ul>li>a")
 
 
 class ProductsPage:
@@ -92,3 +92,10 @@ class ProductsPage:
 
     def goShoppingCart(self):
         self.driver.find_element(*ProductsPageLocators.goCartFromPopUp).click()
+
+    def counterOfAllProducts(self):
+        return self.driver.find_elements(*ProductsPageLocators.listAllProducts)
+
+    def showIndividualName(self, num):
+        return self.driver.find_element(By.CSS_SELECTOR, "div>div.col-sm-9.padding-right>div>div:nth-child("+str(num)+") div.productinfo.text-center>p").text
+
