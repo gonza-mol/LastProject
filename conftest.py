@@ -56,4 +56,4 @@ def pytest_runtest_makereport(item):
 
 def _capture_screenshot(name):
     #driver.get_screenshot_as_file(name)
-    driver.get_screenshot_as_file("C:\\Users\\admin\\PycharmProjects\\NewAutomationPractice\\Test\\ScreenShots\\"+name)
+    driver.get_screenshot_as_file("C:\\Users\\admin\\PycharmProjects\\NewAutomationPractice1\\Test\\ScreenShots\\"+name)

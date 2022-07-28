@@ -49,4 +49,3 @@ class TestShowsCategoryWomenOption(BaseClass):
             print("El nombre del item número " + str(num) + " es " + aux)
             num = num + 1
         time.sleep(3)
-        

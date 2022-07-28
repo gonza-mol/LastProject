@@ -39,3 +39,4 @@ class TestHoverColorOneProduct:
         assert 'rgba(254, 152, 15, 1)' in pp.show_HoverMenTshirtProduct().value_of_css_property('background-color')
         print("Se está visualizando un color naranja al hacer hover sobre el producto: "+pp.show_Title_TshirtBox())
         time.sleep(3)
+

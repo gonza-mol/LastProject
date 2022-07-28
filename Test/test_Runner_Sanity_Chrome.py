@@ -17,5 +17,6 @@ if __name__ == '__main__':
     runner.run(suite)
 
 #(ver)para ejecutar esta suite lo que se hace es correr el comando py.test Test/test_Runner_Sanity_Chrome.py --browser chrome
-
+# estando parado sobre la carpeta del proyecto y ejecutarlo, esto genera un archivo html debajo del archivo
+# conftest y se puede ver el nombre de la suite y cada uno de los test cases ejecutado
 
